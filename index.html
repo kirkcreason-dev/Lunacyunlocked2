@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a090c">
+  <meta name="description" content="JCW Lunacy: Lunacy Unlocked. A two-dimensional arcade wrestling fighter.">
+  <title>JCW Lunacy — Lunacy Unlocked</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="cabinet">
+    <header class="topbar"><a class="wordmark" href="./" aria-label="Lunacy Unlocked home"><b>JCW</b><span>LUNACY <i>UNLOCKED</i></span></a><div class="top-actions"><button id="sound" aria-label="Enable sound" aria-pressed="false">SOUND OFF</button><button id="controls">CONTROLS</button><button id="fullscreen" aria-label="Enter fullscreen">⛶</button></div></header>
+    <div id="stage-wrap">
+      <canvas id="game" width="1280" height="720" aria-label="Lunacy Unlocked wrestling arena"></canvas>
+      <section id="selection" class="screen" aria-labelledby="select-title">
+        <div class="selection-heading"><div><p class="eyebrow">JCW LUNACY PRESENTS</p><h1 id="select-title">LUNACY<br><em>UNLOCKED</em></h1></div><span class="edition">2D ARCADE<br>WRESTLING</span></div>
+        <div class="selection-body"><div class="roster-side"><div class="section-label"><span id="pick-label">CHOOSE YOUR FIGHTER</span><span>01—09</span></div><div id="roster" role="group" aria-label="Wrestlers"></div></div><aside class="match-side"><div class="fighter-preview"><img id="portrait" alt=""><div><span class="eyebrow" id="fighter-style"></span><h2 id="fighter-name"></h2><div id="stats"></div></div></div><div class="versus-strip"><img id="versus-avatar" alt=""><div><span id="versus-label">CPU OPPONENT</span><strong id="versus-name"></strong></div></div><div class="settings"><label>MODE<select id="mode"><option value="cpu">VS CPU</option><option value="local">LOCAL 2 PLAYER</option><option value="arcade">ARCADE RUN</option></select></label><label id="difficulty-label">DIFFICULTY<select id="difficulty"><option value="easy">EASY</option><option value="normal" selected>NORMAL</option><option value="hard">HARD</option></select></label><label><span id="opponent-label">OPPONENT</span><select id="opponent"></select></label><label>ARENA<select id="arena"><option value="0">BLOODYMANIA</option><option value="1">HELL'S PIT</option><option value="2">CARNIVAL OF CARNAGE</option><option value="3">HOUSE OF HORRORS</option></select></label></div><button class="primary" id="fight" disabled>LOADING FIGHTERS…</button><p class="match-note">Best of 3 · KO or three-count pin · V0.2</p></aside></div>
+      </section>
+      <section id="pause" class="modal" role="dialog" aria-modal="true" hidden aria-labelledby="pause-title"><div class="modal-panel"><span class="eyebrow">TIME OUT</span><h2 id="pause-title">MATCH PAUSED</h2><button id="resume" class="primary">RESUME MATCH</button><button id="restart">RESTART MATCH</button><button id="quit">CHARACTER SELECT</button></div></section>
+      <section id="result" class="modal" role="dialog" aria-modal="true" hidden aria-labelledby="result-title"><div class="modal-panel"><span class="eyebrow" id="result-method">MATCH COMPLETE</span><h2 id="result-title"></h2><img id="winner-portrait" alt=""><p id="result-detail"></p><button id="rematch" class="primary">REMATCH</button><button id="result-quit">CHARACTER SELECT</button></div></section>
+      <section id="help" class="modal" role="dialog" aria-modal="true" hidden aria-labelledby="help-title"><div class="modal-panel help-panel"><span class="eyebrow">LEARN THE ROPES</span><h2 id="help-title">CONTROLS</h2><div class="control-table"><b>ACTION</b><b>PLAYER 1</b><b>PLAYER 2</b><span>Move / jump</span><span>A D / W</span><span>← → / ↑</span><span>Strike / heavy</span><span>J / K</span><span>1 / 2</span><span>Grapple / pin</span><span>L</span><span>3</span><span>Block</span><span>S</span><span>↓</span><span>Finisher</span><span>U</span><span>0</span><span>Pause</span><span>Esc / P</span><span>Esc / P</span></div><p>Grapple close to throw. Tap grapple as a grab starts to break it. Press grapple beside a downed opponent to pin. Alternate strike and heavy to escape; pressing both together does not count. Fill your LUNACY meter to unleash your finisher at close range.</p><p>Gamepad: stick / D-pad to move, A jump, X strike, Y heavy, B grapple, LB block, RB finisher, Start pause. Two controllers supported.</p><button id="close-help" class="primary">GOT IT</button></div></section>
+      <button id="pause-button" hidden aria-label="Pause match">Ⅱ</button>
+      <p id="announcement" class="sr-only" aria-live="polite"></p>
+    </div>
+    <div id="touch-controls" hidden><div class="dpad"><button data-key="left" aria-label="Move left">◀</button><button data-key="jump" aria-label="Jump">▲</button><button data-key="right" aria-label="Move right">▶</button><button data-key="block">BLOCK</button></div><div class="action-pad"><button data-key="light">HIT</button><button data-key="heavy">HEAVY</button><button data-key="grapple">GRAB</button><button data-key="special">FINISH</button></div></div>
+    <footer><span id="footer-status">SELECT YOUR FIGHTER. SETTLE IT IN THE RING.</span><span>CREASO-NORSE TECHNOLOGIES</span></footer>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
